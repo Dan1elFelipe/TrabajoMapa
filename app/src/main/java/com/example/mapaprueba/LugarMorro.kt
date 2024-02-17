@@ -16,6 +16,17 @@ class LugarMorro : AppCompatActivity() {
         setContentView(binding.root)
 
         funciondeltal()
+        loaddata()
+    }
+
+    fun loaddata(){
+        val name = intent.getStringExtra("titulo")
+        val descripcion = intent.getStringExtra("descripcion")
+        val image = intent.getIntExtra("imagen", 0)
+
+        binding.TituloLugar.text = name
+        binding.Descripcion.text = descripcion
+        binding.ImagenLugar.setImageResource(image)
     }
 
     fun funciondeltal(){

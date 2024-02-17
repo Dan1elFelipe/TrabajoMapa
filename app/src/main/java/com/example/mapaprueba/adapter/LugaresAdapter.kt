@@ -105,7 +105,7 @@ class LugaresAdapter(private val listalugares: List<Lugares>) : RecyclerView.Ada
                 val intent = Intent(itemView.context, LugarMorro::class.java)
                 intent.putExtra("titulo", item.nombre)
                 intent.putExtra("descripcion", item.coso)
-                intent.putExtra("imagen", item.imagen)
+                intent.putExtra("imagen", item.imagen.toInt())
                 itemView.context.startActivity(intent)
             }
         }
