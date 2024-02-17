@@ -11,10 +11,15 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapaMorro : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mapMorro: GoogleMap
+    private var latitud: Double = 0.0
+    private var longitud: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mapa_morro)
+
+        latitud = intent.getDoubleExtra("latitud", 0.0)
+        longitud = intent.getDoubleExtra("longitud", 0.0)
 
         createFragment()
 
@@ -31,7 +36,7 @@ class MapaMorro : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun createMarket() {
-        val coordinates = LatLng(2.44474, -76.60007)
+        val coordinates = LatLng(latitud, longitud)
         val marker = MarkerOptions().position(coordinates).title("Morro")
         mapMorro.addMarker(marker)
     }

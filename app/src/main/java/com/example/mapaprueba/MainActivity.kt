@@ -34,5 +34,4 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val marker= MarkerOptions().position(coordinates).title("Sena")
         map.addMarker(marker)
     }
-
 }

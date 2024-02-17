@@ -33,20 +33,21 @@ class LugarMorro : AppCompatActivity() {
         elqueescucha()
     }
 
-    fun elqueescucha(){
+    private fun elqueescucha(){
         binding.Cerrar.setOnClickListener{
             val intent = Intent(this, MainRecyclerView::class.java)
             startActivity(intent)
         }
 
         binding.Ubicacion.setOnClickListener{
-            val intent = Intent(this, MapaMorro::class.java)
+            val latitud = intent.getDoubleExtra("latitud", 0.0)
+            val longitud = intent.getDoubleExtra("longitud", 0.0)
+
+            val intent = Intent(this, MapaMorro::class.java).apply {
+                putExtra("latitud", latitud)
+                putExtra("longitud", longitud)
+            }
             startActivity(intent)
         }
-
     }
-
-
-
-
 }

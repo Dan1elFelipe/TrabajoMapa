@@ -31,11 +31,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mapaprueba.LugarMorro
 import com.example.mapaprueba.Lugares
+import com.example.mapaprueba.MapaMorro
 import com.example.mapaprueba.R
 /**..
 class LugaresAdapter(private val listalugares:List<Lugares>) : RecyclerView.Adapter<LugaresHolder>(){
@@ -106,8 +108,11 @@ class LugaresAdapter(private val listalugares: List<Lugares>) : RecyclerView.Ada
                 intent.putExtra("titulo", item.nombre)
                 intent.putExtra("descripcion", item.coso)
                 intent.putExtra("imagen", item.imagen.toInt())
+                intent.putExtra("latitud", item.latitud)
+                intent.putExtra("longitud", item.longitud)
                 itemView.context.startActivity(intent)
             }
+
         }
     }
 }
