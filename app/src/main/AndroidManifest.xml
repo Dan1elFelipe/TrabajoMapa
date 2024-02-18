@@ -15,11 +15,6 @@
         android:theme="@style/Theme.MapaPrueba"
         tools:targetApi="31">
         <activity
-            android:name=".MapaParque"
-            android:exported="true">
-
-        </activity>
-        <activity
             android:name=".MapaMorro"
             android:exported="true">
 
@@ -40,10 +35,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>
